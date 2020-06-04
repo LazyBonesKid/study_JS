@@ -1,1 +1,2 @@
 alert('privet');
+alert('poka');
