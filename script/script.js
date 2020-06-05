@@ -10,6 +10,8 @@ console.log(typeof money, typeof income, typeof deposite);
 console.log(addExpenses.length);
 console.log('Период равен ' + period + ' месяцев');
 console.log('Цель заработать ' + mission + ' крышек нюка колы');
+console.log(addExpenses.toLocaleLowerCase());
+console.log(addExpenses.split(', '));
 
 let budgetDay = money / 30 ;
 console.log(budgetDay);
