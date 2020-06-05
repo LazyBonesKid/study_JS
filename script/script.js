@@ -1,10 +1,15 @@
 let 
-money,
-income,
-addExpenses,
-deposite,
-mission = 'Получить 2 балла за задание',
-period;
+money  = 30000,
+income = 'Продажа арбузов',
+addExpenses = 'Мороженное, гречка, туалетная бумага',
+deposite = true,
+mission = 100500,
+period = 11;
 
-alert('Здравствуйте, Богдан');
-console.log(mission);
+console.log(typeof money, typeof income, typeof deposite);
+console.log(addExpenses.length);
+console.log('Период равен ' + period + ' месяцев');
+console.log('Цель заработать ' + mission + ' крышек нюка колы');
+
+let budgetDay = money / 30 ;
+console.log(budgetDay);
