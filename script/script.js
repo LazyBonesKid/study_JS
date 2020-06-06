@@ -11,7 +11,8 @@ console.log(addExpenses.length);
 console.log('Период равен ' + period + ' месяцев');
 console.log('Цель заработать ' + mission + ' крышек нюка колы');
 
-console.log(addExpenses = addExpenses.toLocaleLowerCase(), addExpenses.split(', '));
+console.log(addExpenses = addExpenses.toLocaleLowerCase().split(', '));
+
 
 let budgetDay = money / 30 ;
 console.log(budgetDay);
