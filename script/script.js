@@ -27,7 +27,7 @@ while (!parseInt(money)) {
     Number(money);
 }
 
-console.log(typeof money);
+
 addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
 deposite = confirm('Есть ли у вас депозит в банке?');
 console.log('Период равен ' + period + ' месяцев');
@@ -46,13 +46,13 @@ console.log('Цель будет достигнута через:', Math.ceil(mi
 
 
 let budgetDay = Math.floor(budgetMonth / 30) ;
-console.log(budgetDay);
+console.log('Бюджет на день:', budgetDay);
 
 if (budgetDay >= 1200) {
     console.log('У вас высокий уровень дохода');
 } else if (budgetDay >= 600 && budgetDay < 1200) {
     console.log('У вас средний уровень дохода');
-} else if (budgetDay < 600 && budgetDay > 0) {
+} else if (budgetDay < 600 && budgetDay >= 0) {
     console.log('К сожалению у вас уровень дохода ниже среднего');
 } else if (budgetDay < 0 ) {
     console.log('Что то пошло не так');
