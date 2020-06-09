@@ -82,4 +82,5 @@ let getStatusIncome = function(budgetDay) {
     } 
 };
 
+
 console.log(getStatusIncome(budgetDay));
