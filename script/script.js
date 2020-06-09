@@ -49,7 +49,7 @@ const getExpensesMonth = function (amountOne, amountTwo) {
     return amountOne + amountTwo;
 };
 
-const getAccumulatedMonth = function (money, amountOne , amountTwo) { // попробывал через callback функцию
+const getAccumulatedMonth = function (money, amountOne , amountTwo) { // попробывал callback 
     return money - getExpensesMonth(amountOne, amountTwo);
 };
 
