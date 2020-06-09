@@ -47,24 +47,24 @@ amount2 = +prompt('Во сколько это обойдется?', 500);
 
 const getExpensesMonth = function (amountOne, amountTwo) {
     return amountOne + amountTwo;
-}
+};
 
 const getAccumulatedMonth = function (money, amountOne , amountTwo) { // попробывал через callback функцию
     return money - getExpensesMonth(amountOne, amountTwo);
-}
+};
 
 let  accumulatedMonth = getAccumulatedMonth(money, amount2, amount1);
 console.log('Бюджет на месяц: ', accumulatedMonth);
 
 const getTargetMonth = function (mission, accumulated) {
     return 'Цель будет достигнута через: ' + Math.ceil(mission/accumulated) + ' месяца';
-}
+};
 
 console.log(getTargetMonth(mission, accumulatedMonth));
 
 const getBudgetDay = function (accumulated) {
     return Math.floor(accumulatedMonth / 30)
-}
+};
 
 let budgetDay = getBudgetDay(accumulatedMonth);
 console.log('Бюджет на день:', budgetDay);
