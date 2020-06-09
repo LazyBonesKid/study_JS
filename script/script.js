@@ -1,10 +1,6 @@
 'use strict';
 
 let 
-money,
-income,
-addExpenses,
-deposite,
 mission = 100500,
 period = 11;
 
@@ -12,35 +8,40 @@ let showTypeOf = function(data) {
     console.log(typeof(data));
 };
 
-showTypeOf(money);
 
-while (!parseInt(money)) {
-    money = prompt('Ваш месячный доход?', 30000);
-    if(money == null){
-        alert('Это поле обезательно к заполнению');
-        continue;
+
+let money = function () {
+        while (!parseInt(money)) {
+        money = prompt('Ваш месячный доход?', 30000);
+        if(money == null){
+            alert('Это поле обезательно к заполнению');
+            continue;
+        }
+        if(!money.trim()){
+            alert('пустая строка (или только пробелы)');
+            continue;
+        }
+        if(!Number(money)){
+            alert('Только цифры');
+            continue;
+        }
+        Number(money);
     }
-    if(!money.trim()){
-        alert('пустая строка (или только пробелы)');
-        continue;
-    }
-    if(!Number(money)){
-        alert('Только цифры');
-        continue;
-    }
-    Number(money);
 }
+money();
 
-addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
+let
+addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
 deposite = confirm('Есть ли у вас депозит в банке?');
+
 console.log('Период равен ' + period + ' месяцев');
 console.log('Цель заработать ' + mission + ' крышек нюка колы');
 console.log(addExpenses = addExpenses.toLocaleLowerCase().split(', '));
 
 let 
 expenses1 = prompt('Введите обязательную статью расходов'),
-expenses2 = prompt('Введите обязательную статью расходов'),
 amount1 = +prompt('Во сколько это обойдется?', 2500),
+expenses2 = prompt('Введите обязательную статью расходов'),
 amount2 = +prompt('Во сколько это обойдется?', 500);
 
 
