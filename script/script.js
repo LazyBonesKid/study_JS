@@ -63,6 +63,7 @@ let  accumulatedMonth = getAccumulatedMonth(money);
 console.log('Бюджет на месяц: ', accumulatedMonth);
 
 let getTargetMonth = function (mission, accumulated) {
+    
     if (accumulatedMonth > 0){
         return 'Цель будет достигнута через: ' + Math.ceil(mission/accumulated) + ' месяца';
     } else {
