@@ -12,8 +12,8 @@ function randomGame() {
     function game() {
         alert('1');
         if (userNumber === null) {
-            alert('igra zakoncilas');
-            return console.log(randomNumber);
+            alert('тут игра должна закончиться');
+            return;
         }
         alert('2');
         if (!isNumber(userNumber)) {
