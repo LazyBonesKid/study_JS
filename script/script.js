@@ -8,7 +8,7 @@ let isNumber = function(n) {
 function randomGame() {
     let randomNumber = Math.floor(Math.random() * (100 - 1)) + 1,
     userNumber = prompt('Угадайте число от 1 до 100');
-    
+    alert(randomNumber);
     function game() {
 
         if (userNumber === null) {
@@ -27,15 +27,15 @@ function randomGame() {
             userNumber = prompt('Введите новый вариант');
             return game();
         }
-        
+
         if (userNumber < randomNumber) {
             alert('Загаданное число больше');
             userNumber = prompt('Введите новый вариант');
             return game();
         }
 
-        if (userNumber === randomNumber) {
-            console.log('Вы угадали число!!!');
+        if (userNumber == randomNumber) {
+            alert('Вы угадали число!!!');
             return;
         }
     }
@@ -43,3 +43,6 @@ function randomGame() {
 }
 
 randomGame();
+
+
+
