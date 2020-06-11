@@ -17,7 +17,6 @@ function randomGame() {
         }
         alert('2');
         if (!isNumber(userNumber)) {
-            alert("g")
             alert('Вы ввели не число');
             userNumber = prompt('Введите новый вариант');
             alert(userNumber);
