@@ -36,5 +36,6 @@ function randomGame() {
     game(a);
 }
 
+
 randomGame();
 
