@@ -6,34 +6,37 @@ let isNumber = function(n) {
 }
 
 function randomGame() {
-    let a = Math.floor(Math.random() * (100 - 1)) + 1,
-    userNumber = prompt('Угадай число от 1 до 100');
-    alert(a);
-    function game(randomNumber) {
-        
-        if (userNumber === null) { 
-            return;
+    let randomNumber = Math.floor(Math.random() * (100 - 1)) + 1,
+    userNumber = prompt('Угадайте число от 1 до 100');
+    alert(userNumber);
+    function game() {
+        alert('1');
+        if (userNumber === null) {
+            alert('igra zakoncilas');
+            return console.log(randomNumber);
         }
-
+        alert('2');
         if (!isNumber(userNumber)) {
-            alert('Вы ввели не число!!!!');
+            alert("g")
+            alert('Вы ввели не число');
             userNumber = prompt('Введите новый вариант');
-            game(randomNumber);
+            alert(userNumber);
+            game();
         }
-
-        if (userNumber < randomNumber) {
-            alert('Загаданное число больше');
-            userNumber = prompt('Введите новый вариант');
-            game(randomNumber);
-        }
-
+        alert('3');
         if (userNumber > randomNumber) {
             alert('Загаданное число меньше');
             userNumber = prompt('Введите новый вариант');
-            game(randomNumber);
+            game();
+        }
+        alert('4');
+        if (userNumber < randomNumber) {
+            alert('Загаданное число больше');
+            userNumber = prompt('Введите новый вариант');
+            game();
         }
     }
-    game(a);
+    game();
 }
 
 
