@@ -8,36 +8,38 @@ let isNumber = function(n) {
 function randomGame() {
     let randomNumber = Math.floor(Math.random() * (100 - 1)) + 1,
     userNumber = prompt('Угадайте число от 1 до 100');
-    alert(userNumber);
+    
     function game() {
-        alert('1');
+
         if (userNumber === null) {
             alert('тут игра должна закончиться');
             return;
         }
-        alert('2');
+
         if (!isNumber(userNumber)) {
             alert('Вы ввели не число');
             userNumber = prompt('Введите новый вариант');
-            alert(userNumber);
-            game();
+            return game();
         }
-        alert('3');
+
         if (userNumber > randomNumber) {
             alert('Загаданное число меньше');
             userNumber = prompt('Введите новый вариант');
-            game();
+            return game();
         }
-        alert('4');
+        
         if (userNumber < randomNumber) {
             alert('Загаданное число больше');
             userNumber = prompt('Введите новый вариант');
-            game();
+            return game();
+        }
+
+        if (userNumber === randomNumber) {
+            console.log('Вы угадали число!!!');
+            return;
         }
     }
     game();
 }
 
-
 randomGame();
-
