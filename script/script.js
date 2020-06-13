@@ -38,10 +38,10 @@ let appData = {
             sum;
 
             do {
-                sum = +prompt('Во сколько это обойдется?', 450);
+                sum = prompt('Во сколько это обойдется?', 450);
             } while (!isNumber(sum));
 
-            appData.expenses[key] = sum;
+            appData.expenses[key] = +sum;
         }
         
         for (let key in appData.expenses) {
