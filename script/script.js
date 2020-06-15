@@ -5,7 +5,7 @@ let isNumber = function(n) {
 }
 
 let isString = function (n) {
-    let re = /[0-9]/g;
+    let re = /[!@#$%^&*()_]|[0-9]/g;
     return re.test(n) || n === null || !n.trim()
 }
 
@@ -50,7 +50,12 @@ let appData = {
             appData.income[itmeIncome] = cashIncome;
         }
 
-        let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую' , 'интеРнет, таКси, комМунальные расходы');
+        let addExpenses;
+        
+        do {
+            addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую' , 'интеРнет, таКси, комМунальные расходы');
+        } while (isString(addExpenses));
+        
         appData.addExpenses = addExpenses.toLocaleLowerCase().split(', ');
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
         
@@ -119,11 +124,14 @@ let appData = {
 
 appData.asking();
 appData.getBudget();
+console.log('expenses:', appData.expenses);
 console.log('Расходы за месяц:', appData.expensesMonth);
 console.log('Период равен ' + appData.period + ' месяцев');
 console.log('Цель заработать ' + appData.mission + ' крышек нюка колы');
 console.log(appData.getTargetMonth());
 console.log(appData.getStatusIncome());
+
+
 
 /* console.log('Наша программа включает в себя данные: ');
 for (let key in appData) {
