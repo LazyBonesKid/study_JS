@@ -6,13 +6,18 @@ buttonPlusIncome         = document.getElementsByTagName('button')[0],
 buttonPlusExpenses       = document.getElementsByTagName('button')[1],
 checkbox                 = document.querySelector('#deposit-check'),
 possibleIncome           = document.querySelectorAll('.additional_income-item'),
-budgetMonthValue         = document.querySelector('.budget_month-value'),
-budgetDayValue           = document.querySelector('.budget_day-value'),
-expensesMonthValue       = document.querySelector('.expenses_month-value'),
-additionalIncomeValue    = document.querySelector('.additional_income-value'),
-additionalExpensesValue  = document.querySelector('.additional_expenses-value'),
-incomePeriodValue        = document.querySelector('.income_period-value'),
-targerMonthValue         = document.querySelector('.target_month-value'),
+
+Value = document.getElementsByClassName('result-total'),
+
+budgetMonthValue         = document.getElementsByClassName('result-total')[0],
+budgetDayValue           = document.getElementsByClassName('result-total')[1],
+expensesMonthValue       = document.getElementsByClassName('result-total')[2],
+additionalIncomeValue    = document.getElementsByClassName('result-total')[3],
+additionalExpensesValue  = document.getElementsByClassName('result-total')[4],
+incomePeriodValue        = document.getElementsByClassName('result-total')[5],
+targerMonthValue         = document.getElementsByClassName('result-total')[6],
+
+
 salaryAmount             = document.querySelector('.salary-amount'),
 incomeTitle              = document.querySelector('[class="income-title"]'),
 incomeAmount             = document.querySelector('.income-amount'),
@@ -23,6 +28,7 @@ targetAmount             = document.querySelector('.target-amount'),
 periodSelect             = document.querySelector('.period-select');
 
 
+console.log(Value);
 console.log(calculation);
 console.log(buttonPlusIncome);
 console.log(buttonPlusExpenses);
@@ -60,8 +66,6 @@ let start = function () {
     return start;
 };
 
-//let
-//money = start();
 
 let appData = {
     income: {},
@@ -71,7 +75,7 @@ let appData = {
     deposit: false,
     mission: 100500,
     period: 11,
-    budget: money,
+    budget: 0,
     percentDeposit: 0,
     percentMoney: 0,
     budgetDay: 0,
@@ -165,30 +169,3 @@ let appData = {
         return appData.budgetMonth * appData.period;
     }
 };
-
-/*
-appData.asking();
-appData.getBudget();
-console.log('expenses:', appData.expenses);
-console.log('Расходы за месяц:', appData.expensesMonth);
-console.log('Период равен ' + appData.period + ' месяцев');
-console.log('Цель заработать ' + appData.mission + ' крышек нюка колы');
-console.log(appData.getTargetMonth());
-console.log(appData.getStatusIncome());
-*/
-
-
-/* console.log('Наша программа включает в себя данные: ');
-for (let key in appData) {
-    console.log('Свойство ' + key + ' Значение ' + appData[key]);
-} */
-
-/*
-appData.getInfoDeposit();
-
-console.log(appData.addExpenses.map(function(item, i , arr1) {
-    return `${item[0].toUpperCase()}${item.slice(1)}`;
-}).join(', '));
-
-console.log(appData.calcSavedMoney(), appData.percentDeposit, appData.moneyDeposit);
-*/
