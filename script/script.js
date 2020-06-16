@@ -6,9 +6,6 @@ buttonPlusIncome         = document.getElementsByTagName('button')[0],
 buttonPlusExpenses       = document.getElementsByTagName('button')[1],
 checkbox                 = document.querySelector('#deposit-check'),
 possibleIncome           = document.querySelectorAll('.additional_income-item'),
-
-Value = document.getElementsByClassName('result-total'),
-
 budgetMonthValue         = document.getElementsByClassName('result-total')[0],
 budgetDayValue           = document.getElementsByClassName('result-total')[1],
 expensesMonthValue       = document.getElementsByClassName('result-total')[2],
@@ -16,8 +13,6 @@ additionalIncomeValue    = document.getElementsByClassName('result-total')[3],
 additionalExpensesValue  = document.getElementsByClassName('result-total')[4],
 incomePeriodValue        = document.getElementsByClassName('result-total')[5],
 targerMonthValue         = document.getElementsByClassName('result-total')[6],
-
-
 salaryAmount             = document.querySelector('.salary-amount'),
 incomeTitle              = document.querySelector('[class="income-title"]'),
 incomeAmount             = document.querySelector('.income-amount'),
