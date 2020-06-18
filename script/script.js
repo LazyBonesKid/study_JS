@@ -270,7 +270,6 @@ placeholderNumber.forEach(function (item) {
 placeholderText.forEach(function (item) {
     return item.addEventListener('input', function () {
         if (isString(item.value)) {
-            console.log('privet');
             item.value = item.value.slice(0, -1);
         }
     });
