@@ -312,7 +312,6 @@ let appData = {
 
             start.style.display = '';
             cancel.style.display = 'none';
-            
         });
     },
 
