@@ -275,8 +275,7 @@ let appData = {
         cancel.style.display = 'block';
         cancel.textContent = 'Сбросить';
         cancel.addEventListener('click', function() {
-            let 
-            inputs = document.querySelectorAll('[type="text"]');
+            let inputs = document.querySelectorAll('[type="text"]');
 
             inputs.forEach(function(item) {
                     item.value = '';
