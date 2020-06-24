@@ -34,6 +34,9 @@ let
     start = document.getElementById('start');
 
 
+    //////////
+    let depositCheck = document.getElementById('deposit-check');
+    //////////
 
 console.log('                    ЛЕВЫЙ БЛОК');
 console.log(salaryAmount);
@@ -82,7 +85,6 @@ let isString = function (n) {
 }
 
 
-
 let appData = {
     income: {},
     expenses: {},
@@ -107,9 +109,9 @@ let appData = {
         this.getAddIncome();
         this.getBudget();
 
-        this.blockingInputs();
-        this.resetBlock();
         this.showRezult();
+        this.blockingInputs();
+        this.reset();
     },
 
     /////////////// ВЫВОД НА СТРАНИЦУ //////////////////////////
@@ -254,11 +256,12 @@ let appData = {
     blockingInputs: function () {
         let 
         inputs = document.querySelectorAll('[type="text"]'),
-        a = 0;
+        leftInputsCount = inputs.length - 7,
+        count = 0;
 
         inputs.forEach(function(item) {
-            if(a !== 11){
-                a++;
+            if(count !== leftInputsCount ){
+                count++;
                 item.setAttribute('readonly',0);
             } else {
                 return;
@@ -266,13 +269,50 @@ let appData = {
         });
     },
 
-    resetBlock: function() {
+    reset: function() {
         start.style.display = 'none';
         let cancel = document.getElementById('cancel');
         cancel.style.display = 'block';
         cancel.textContent = 'Сбросить';
         cancel.addEventListener('click', function() {
-            console.log(this);
+            let 
+            inputs = document.querySelectorAll('[type="text"]');
+
+            inputs.forEach(function(item) {
+                    item.value = '';
+                    item.removeAttribute('readonly',0);
+            });
+
+            periodSelect.value = '1';
+            periodNumber.textContent = '1';
+
+            let
+            incomeItemsCopy = document.querySelectorAll('.income-items'),
+            expensesItemsCopy = document.querySelectorAll('.expenses-items');
+
+            for (let i = 0; i < incomeItemsCopy.length - 1; i++){
+                incomeItemsCopy[i].parentNode.removeChild(incomeItemsCopy[i]);
+                
+            }
+
+            for (let i = 0; i < expensesItemsCopy.length - 1; i++){
+                expensesItemsCopy[i].parentNode.removeChild(expensesItemsCopy[i]);
+            }
+
+            buttonPlusExpenses.style.display = '';
+            buttonPlusIncome.style.display = '';
+
+            if (depositCheckValue == true) {
+                depositCheck.click();
+            }
+
+            for(let key in appData) {
+                appData[key] = appDataCopy[key];
+            }
+
+            start.style.display = '';
+            cancel.style.display = 'none';
+            
         });
     },
 
@@ -284,6 +324,14 @@ let appData = {
         return this.budgetMonth * periodSelect.value;
     },
 };
+
+let appDataCopy = Object.assign({},appData),
+depositCheckValue = false;
+
+
+depositCheck.addEventListener('click', function() {
+    depositCheckValue = !depositCheckValue;
+})
 
 placeholderNumber.forEach(function (item) {
     return item.addEventListener('input', function () {
