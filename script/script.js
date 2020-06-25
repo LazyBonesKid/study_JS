@@ -37,41 +37,6 @@ let
     let depositCheck = document.getElementById('deposit-check');
     //////////
 
-console.log('                    ЛЕВЫЙ БЛОК');
-console.log(salaryAmount);
-console.log(incomeTitle);
-console.log(buttonPlusIncome);
-console.log(additionalIncomeItem);
-console.log(expensesTitle);
-console.log(expensesAmount);
-console.log(buttonPlusExpenses);
-console.log(additionalExpensesItem);
-console.log(checkbox);
-console.log(targetAmount);
-console.log(periodSelect);
-// div
-console.log('                         DIV');
-console.log(expensesItems);
-console.log(incomeItems);
-//placeholder
-console.log('                    PLACEHOLDER');
-console.log(placeholderNumber);
-console.log(placeholderText);
-
-console.log('                    ПРАВЫЙ БЛОК');
-console.log(budgetMonthValue);
-console.log(budgetDayValue);
-console.log(expensesMonthValue);
-console.log(additionalIncomeValue);
-console.log(additionalExpensesValue);
-console.log(incomePeriodValue);
-console.log(targerMonthValue);
-console.log(start);
-
-
-
-
-
 
 let isNumber = function (n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
