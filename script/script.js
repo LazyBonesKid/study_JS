@@ -86,8 +86,9 @@ let appData = {
     /////////////// ВЫВОД НА СТРАНИЦУ //////////////////////////
 
     showRezult: function () {
+        let myThis = this;
         document.querySelector('.period-select').addEventListener('input', function () {
-            incomePeriodValue.value = appData.calcPeriod();
+            incomePeriodValue.value = myThis.calcPeriod();
         });
         budgetMonthValue.value = this.budgetMonth;
         budgetDayValue.value = this.budgetDay;
