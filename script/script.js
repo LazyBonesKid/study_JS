@@ -306,7 +306,6 @@ AppData.prototype.reset = function() {
             depositCheck.click();
         }
 
-
         for (let key in appData) {
             if(typeof appData[key] !== 'function') {
                 appData[key] = appDataCopy2[key];
@@ -349,7 +348,6 @@ AppData.prototype.addEventListeners = function() {
     });
     
     let _this = this;
-
     start.addEventListener('click', function () {
         if (salaryAmount.value.trim() == '') {
             return alert('Заполните "Месячный доход"');
@@ -365,12 +363,10 @@ AppData.prototype.addEventListeners = function() {
     buttonPlusExpenses.addEventListener('click', this.addExpensesBlock);
 };
 
-const appData = new AppData();
-const appDataCopy2 = Object.assign({}, new AppData());
-console.log(appData);
-console.log(appDataCopy2);
+const appData = new AppData(),
+appDataCopy2 = Object.assign({}, new AppData());
+
 let 
-appDataCopy = JSON.parse(JSON.stringify(appData)),
 depositCheckValue = false;
 
 
