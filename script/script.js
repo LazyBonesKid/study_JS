@@ -265,7 +265,7 @@ class AppData {
         const cancel = document.getElementById('cancel');
         cancel.style.display = 'block';
         cancel.textContent = 'Сбросить';
-        cancel.addEventListener('click', function() {
+        cancel.addEventListener('click', () => {
             const inputs = document.querySelectorAll('[type="text"]');
     
             inputs.forEach( (item) => {
@@ -318,12 +318,12 @@ class AppData {
     };
 
     addEventListeners () {
-        depositCheck.addEventListener('click', function() {
+        depositCheck.addEventListener('click', () => {
             depositCheckValue = !depositCheckValue;
         })
         
         placeholderNumber.forEach((item) => {
-            return item.addEventListener('input', function () {
+            return item.addEventListener('input', () => {
                 if (!isNumber(item.value)) {
                     item.value = item.value.slice(0, -1);
                 } 
@@ -331,7 +331,7 @@ class AppData {
         });
         
         placeholderText.forEach((item) => {
-            return item.addEventListener('input', function () {
+            return item.addEventListener('input',  () => {
                 if (isString(item.value)) {
                     item.value = item.value.slice(0, -1);
                 }
@@ -346,7 +346,7 @@ class AppData {
         });
         
         
-        document.querySelector('.period-select').addEventListener('input', function () {
+        document.querySelector('.period-select').addEventListener('input', () => {
             periodNumber.innerHTML = periodSelect.value;
         });
         buttonPlusIncome.addEventListener('click', this.addIncomeBlock);
