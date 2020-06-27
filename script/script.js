@@ -1,3 +1,5 @@
+'use strict';
+
 function DomElement (selector, height, width, bg, frontSize) {
     this.selector  = selector;
     this.height    = height;
@@ -8,31 +10,42 @@ function DomElement (selector, height, width, bg, frontSize) {
 }
 
 DomElement.prototype.domCreate = function () {
-    let 
-    docEl = document.createElement('dasd');
+    let style = document.createElement('style');
+    style.type = 'text/css';
 
-    if (this.selector.indexOf('.') !== -1){
-        docEl.classList.add(this.selector);
-    }else if (this.selector.indexOf('#') !== -1){
-        docEl.setAttribute('id', this.selector);
-    }
-    
-    docEl.style.cssText = `
+    style.innerHTML =`${this.selector} { 
     height: ${this.height};
     width:  ${this.width};
     background: ${this.bg};
     font-size: ${this.frontSize};
-    position: absolute;
     `;
 
-    docEl.textContent = '123';
+    document.getElementsByTagName('head')[0].appendChild(style);
+    
+    let 
+    selectorDop = this.selector.slice(1),
+    docEl;
 
+    if (this.selector.indexOf('.') !== -1) {
+        docEl = document.createElement('div');
+        docEl.className = selectorDop;
+    }else if (this.selector.indexOf('#') !== -1){
+        docEl = document.createElement('p');
+        docEl.setAttribute('id', selectorDop);
+    }
+
+    docEl.textContent =  prompt('text');
     document.body.append(docEl);
+
 };
 
-let domEl = new DomElement('#black','100px','100px','blue', '50px');
-domEl.domCreate();
+let div = new DomElement('.black','100px','100px','#00FA9A', '50px');
+let p = new DomElement('#black','50px','30px','#008080', '30px');
 
+
+
+div.domCreate();
+p.domCreate();
 
 
 
