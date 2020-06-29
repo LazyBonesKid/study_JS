@@ -13,7 +13,6 @@ class Seconds extends First {
     }
 }
 
-const Fir = new First;
 const Sec = new Seconds;
 
 Sec.hello();
