@@ -299,10 +299,13 @@ class AppData {
             if (depositCheckValue == true) {
                 depositCheck.click();
             }
-
-            for (let key in appData) {
-                if (typeof appData[key] !== 'function') {
-                    appData[key] = appDataCopy2[key];
+            
+            let appDataCopy2 = new AppData;
+            Object.assign(appDataCopy2, new AppData);
+            
+            for (let key in this) {
+                if (typeof this[key] !== 'function') {
+                    this[key] = appDataCopy2[key];
                 }
             }
 
@@ -409,14 +412,7 @@ class AppData {
     };
 }
 
-
-
-
 const appData = new AppData(),
-    appDataCopy2 = Object.assign({}, new AppData());
-
-let
-    depositCheckValue = false;
-
+let depositCheckValue = false;
 
 appData.addEventListeners();
