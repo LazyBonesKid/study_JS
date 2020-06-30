@@ -335,8 +335,6 @@ class AppData {
             depositPercent.value = '';
             depositPercent.disabled = false;
             depositPercent.addEventListener('input', () => {
-                console.log(+depositPercent.value);
-                console.log(depositPercent.value[0]);
                 if(!isNumber(depositPercent.value) || +depositPercent.value > 100  || depositPercent.value.length > 3 || +depositPercent.value < 0 || depositPercent.value[0] == 0) {
                     depositPercent.value = depositPercent.value.slice(0, -1);
                 } 
@@ -345,7 +343,6 @@ class AppData {
             depositPercent.value = valueSelect;
             depositPercent.disabled = true;
         }
-        console.log(valueSelect);
     }
 
     depositHandler () {
