@@ -412,7 +412,7 @@ class AppData {
     };
 }
 
-const appData = new AppData(),
+const appData = new AppData();
 let depositCheckValue = false;
 
 appData.addEventListeners();
